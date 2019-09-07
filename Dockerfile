@@ -18,3 +18,4 @@
 # CMD ["python3", "controller.py"] 
 
 # sudo docker inspect 1e75ae5c225f --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
+# docker system prune

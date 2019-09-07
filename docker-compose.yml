@@ -1,13 +1,12 @@
 version: '3'
 services:
-  web:
-    build: .
-    ports:
-      - "5000:5000"
   sensors:
     image: "sensors"
   controller:
     image: "controller"
   manipulator:
     image: "manipulator"
-  
+  webapp:
+    build: .
+    ports:
+      - "5000:5000"
