@@ -1,12 +1,17 @@
 version: '3'
 services:
   sensors:
-    image: "sensors"
+    build: sensor/
+    command: python3 ./sensor.py
   controller:
-    image: "controller"
+    build: controller/
+    command: python3 ./controller.py
   manipulator:
-    image: "manipulator"
+    build: manipulator/
+    command: python3 ./manipulator.py
+    depends_on:
+      - controller    
   webapp:
     build: .
     ports:
-      - "5000:5000"
+      - 5000:5000

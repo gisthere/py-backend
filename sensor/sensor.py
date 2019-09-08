@@ -35,7 +35,7 @@ def sensors_signal():
 
 while time:
 	print(sensors_signal())
-	time.sleep(5)
+	time.sleep(1)
 	
 
 
