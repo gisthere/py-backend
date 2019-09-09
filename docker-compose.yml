@@ -6,6 +6,8 @@ services:
   controller:
     build: controller/
     command: python3 ./controller.py
+    depends_on:
+      - sensors
   manipulator:
     build: manipulator/
     command: python3 ./manipulator.py

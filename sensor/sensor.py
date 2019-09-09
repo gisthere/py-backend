@@ -1,11 +1,9 @@
-#! /usr/bin python3
+
 import datetime
 import random
-import numpy as np
 import time
 
 class sensor:
-
 	def __init__(self, datetime, payload):
 		self.datetime = datetime
 		self.payload = payload
@@ -24,25 +22,17 @@ class sensor:
 		self.payload = self.data()
 		return {'datetime' : self.datetime, 'payload' : self.payload}
 
+	def sensors_signal(self):
+		sensors = range(8)
+		info = []
+		for s in sensors:
+			s = sensor('2019-01-01:00:00',0)		
+			info.append(s.signal())
+			sig = str(info).encode('ASCII')
+		return sig
 
-def sensors_signal():
-	sensors = np.ndarray(8,bytes)
-	info = []
-	for s in sensors:
-		s = sensor('2019-01-01:00:00',0)		
-		info.append(s.signal())
-	return info
-
-while time:
-	print(sensors_signal())
-	time.sleep(1)
-	
-
-
-# def set_interval(func, sec):
-# 	def func_wrapper():
-# 		set_interval(func, sec) 
-# 		func
-# 	t = threading.Timer(sec, func_wrapper)
-# 	t.start()
-# 	return func_wrapper()
+if __name__ == "__main__":
+	while True:
+		s1 = sensor('2000-01-01:00:00',100)
+		time.sleep(1)
+		print(s1.sensors_signal(),"\n")
