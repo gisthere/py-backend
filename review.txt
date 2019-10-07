@@ -1,0 +1,8 @@
+1. There is a Python convention to write class names starting with capital letter (PEP8 ?)
+2. Class detailed descriptions are missing.
+3. Classes are poorly structured with little sense - mix of not relevant functionality.
+4. Lots of important cases are not handled.
+5. Prints are not good for production code. Proper logging is missing
+6. Inappropriate data structures in most of the cases
+7. Poor code quality
+8. Overall task is not done, because your implementation looks like emulation, not like a real working system

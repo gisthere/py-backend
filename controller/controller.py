@@ -32,7 +32,7 @@ c = controller()
 
 print(c.__doc__)
 loop = asyncio.get_event_loop()
-loop.run_until_complete(c.timer())
+loop.run_until_complete(c.timer()) #  <--- useless code
 
 # sen.connect(('172.17.0.3',port2))
 
@@ -43,10 +43,10 @@ contr.listen(1)
 manip, manip_addr = contr.accept()
 
 try:
-	from sensor.sensor import *
+	from sensor.sensor import * #  <--- 1. why import two times?
 	s1 = sensor('2019-01-01:00:00',0)
 except ImportError:
-    from .sensor.sensor import *
+    from .sensor.sensor import * #  <--- 2.
 
 # controller_update = c.update()
 c.update()

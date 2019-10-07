@@ -17,7 +17,7 @@ class manipulator:
         return({'datetime':  date_time, 'status': status})
 
     def logger(self, update):
-        print('controller status')
+        print('controller status') #  <--- using print instead built-in logger
         print(self.receive('{:%Y-%m-%d %H:%M}'.
             format(datetime.datetime.today()),update))
 
